@@ -39,7 +39,7 @@ export class DddCardList extends DDDSuper(I18NMixin(LitElement)) {
   static get properties() {
     return {
       ...super.properties,
-      title: { type: String },
+      title: { type: String, reflect: true },
     };
   }
 
