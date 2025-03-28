@@ -37,8 +37,13 @@
     <h1>ddd-card-list</h1>
     <!-- this is going to do whatever the tag's defaults are -->
     <h2>Default</h2>
+    <ddd-card data-primary="20" data-accent="12">Hello</ddd-card>
+    <h2>data primary</h2>
     <ddd-card-list>
-      
+      <ddd-card></ddd-card>
+      <ddd-card></ddd-card>
+      <ddd-card></ddd-card>
+      <ddd-card></ddd-card>
     </ddd-card-list>
     <h2>Slot usage</h2>
     <ddd-card-list data-accent="3" data-primary="20"><div>Sample slot content</div></ddd-card-list>
@@ -46,6 +51,8 @@
     <ddd-card-list id="example" title="Sample property title"></ddd-card-list>
   </div>
   <script type="module" src="./ddd-card-list.js"></script>
+  <script type="module" src="./ddd-card.js"></script>
+
 
   <!-- Take HAX, the Web and you further down the rabbit hole -->
   <style>

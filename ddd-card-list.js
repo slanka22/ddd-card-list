@@ -6,6 +6,7 @@ import { LitElement, html, css } from "lit";
 import { DDDSuper } from "@haxtheweb/d-d-d/d-d-d.js";
 import { I18NMixin } from "@haxtheweb/i18n-manager/lib/I18NMixin.js";
 
+
 /**
  * `ddd-card-list`
  * 
@@ -21,11 +22,6 @@ export class DddCardList extends DDDSuper(I18NMixin(LitElement)) {
   constructor() {
     super();
     this.title = "";
-    this.t = this.t || {};
-    this.t = {
-      ...this.t,
-      title: "Title",
-    };
     this.registerLocalization({
       context: this,
       localesPath:
@@ -48,12 +44,14 @@ export class DddCardList extends DDDSuper(I18NMixin(LitElement)) {
     return [super.styles,
     css`
       :host {
-        display: block;
+        //display: inline-block;
+        display: flex;
         color: var(--ddd-theme-primary);
         background-color: var(--ddd-theme-accent);
         font-family: var(--ddd-font-navigation);
       }
       .wrapper {
+        display: flex;
         margin: var(--ddd-spacing-2);
         padding: var(--ddd-spacing-4);
       }
@@ -67,7 +65,6 @@ export class DddCardList extends DDDSuper(I18NMixin(LitElement)) {
   render() {
     return html`
 <div class="wrapper">
-  <h3><span>${this.t.title}:</span> ${this.title}</h3>
   <slot></slot>
 </div>`;
   }
