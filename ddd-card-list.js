@@ -58,6 +58,9 @@ export class DddCardList extends DDDSuper(I18NMixin(LitElement)) {
       h3 span {
         font-size: var(--ddd-card-list-label-font-size, var(--ddd-font-size-s));
       }
+      div ::slotted(*){
+        display: inline-block;
+      }
     `];
   }
 

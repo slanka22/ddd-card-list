@@ -14,9 +14,6 @@ import { I18NMixin } from "@haxtheweb/i18n-manager/lib/I18NMixin.js";
 
 export class DddCard extends DDDPulseEffectSuper(I18NMixin((DDD))) {
 
-  updateColor(){
-
-  }
 
   static get tag() {
     return "ddd-card";
@@ -28,14 +25,9 @@ export class DddCard extends DDDPulseEffectSuper(I18NMixin((DDD))) {
     this.campus = "";
     this.image = "";
     this.link = "";
+    this.description = "";
    
-    this.registerLocalization({
-      context: this,
-      localesPath:
-        new URL("./locales/ddd-card.ar.json", import.meta.url).href +
-        "/../",
-      locales: ["ar", "es", "hi", "zh"],
-    });
+   
   }
 
   // Lit reactive properties
@@ -45,6 +37,8 @@ export class DddCard extends DDDPulseEffectSuper(I18NMixin((DDD))) {
       title: { type: String, reflect: true },
       campus: { type: String, reflect: true },
       image: { type: String, reflect: true },
+      description: { type: String, reflect: true },
+      link: { type: String, reflect: true },
     };
   }
 
@@ -78,6 +72,7 @@ export class DddCard extends DDDPulseEffectSuper(I18NMixin((DDD))) {
       .accent{
         border-top-width: 12px;
       }
+      
       img {
         width: 100%;
       }
@@ -170,14 +165,15 @@ export class DddCard extends DDDPulseEffectSuper(I18NMixin((DDD))) {
       ],
     };
   }
-
+    //https://images.ctfassets.net/ni9rh5nu0d99/1paFaX2Dc7iHh9Z6K7mIim/1427b9970ff21dd9c8a770067638efc1/abington-02.jpg
   // Lit render the HTML
   render() {
     return html`    
 <div class="card">
-  <img src="https://images.ctfassets.net/ni9rh5nu0d99/1paFaX2Dc7iHh9Z6K7mIim/1427b9970ff21dd9c8a770067638efc1/abington-02.jpg" alt="placeholder"/>
+  <img src="${this.image}" alt="placeholder"/> 
   <div class="accent"></div>
-  <p>YAY</p>
+  <p>${this.campus}</p>
+  <p>${this.description}</p>
   <button>Explore ></button>
 </div>`;
   }
