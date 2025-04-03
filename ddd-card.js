@@ -26,7 +26,7 @@ export class DddCard extends DDDPulseEffectSuper(I18NMixin((DDD))) {
     this.image = "";
     this.link = "";
     this.description = "";
-    this.dddprimary = "";
+    this.dddprimary = "2";
   }
 
   // Lit reactive properties
@@ -38,6 +38,7 @@ export class DddCard extends DDDPulseEffectSuper(I18NMixin((DDD))) {
       image: { type: String, reflect: true },
       description: { type: String, reflect: true },
       link: { type: String, reflect: true },
+      dddprimary: { type: String, reflect: true, attribute: "ddd-primary" },
     };
   }
 
@@ -69,14 +70,13 @@ export class DddCard extends DDDPulseEffectSuper(I18NMixin((DDD))) {
         border-radius: var(--ddd-radius-sm);
         background-color: var(--ddd-accent-6);
            }
-      .accent{
-        height: 15px;
-        width: 100%;
-      }
+
+    
       
       img {
         width: 100%;
-        border-radius: var(--ddd-radius-sm);
+        border-top-left-radius: var(--ddd-radius-sm);
+        border-top-right-radius: var(--ddd-radius-sm);
       }
       h1 p{
         font-family: var(---ddd-font-primary); //Roboto
@@ -96,6 +96,11 @@ export class DddCard extends DDDPulseEffectSuper(I18NMixin((DDD))) {
       }
       p{
         height: 100px;
+      }
+      .accent{
+        border-top-left-radius: var(--ddd-radius-sm);
+        border-top-right-radius: var(--ddd-radius-sm);
+        
       }
 
       .container {
@@ -193,13 +198,14 @@ export class DddCard extends DDDPulseEffectSuper(I18NMixin((DDD))) {
   render() {
     return html`    
 <div class="card">
-  <img src="${this.image}" alt="placeholder"/> 
-  <div class="accent"></div>
+  <div class="accent" style="background-color: var(--ddd-primary-${this.dddprimary});">
+    <img src="${this.image}" alt="placeholder"/> 
+  </div>
   <div class="container">
     <h1>${this.campus}</h1>
     <p>${this.description}</p>
     <button>Explore ></button>
-    <span class="button"></span>
+    <span class="ddd Primary-0 large"></span>
   </div>
 </div>`;
   }
