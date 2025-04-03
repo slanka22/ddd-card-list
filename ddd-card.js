@@ -197,7 +197,7 @@ export class DddCard extends DDDPulseEffectSuper(I18NMixin((DDD))) {
   // Lit render the HTML
 render() {
     return html`    
-<div class="card">
+<ddd-card class="ddd-primary-${this.dddprimary} large">
   <div class="accent" style="background-color: var(--ddd-primary-${this.dddprimary});">
     <img src="${this.image}" alt="placeholder"/> 
   </div>
@@ -206,8 +206,9 @@ render() {
     <p>${this.description}</p>
     <button large data-primary="0" class="ddd-primary-0">Explore ></button>
   </div>
-</div>`;
+</ddd-card>`;
 }
+
 
 
 
