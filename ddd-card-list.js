@@ -19,9 +19,26 @@ export class DddCardList extends DDDSuper(I18NMixin(LitElement)) {
     return "ddd-card-list";
   }
 
+  updated(changedProperties) {
+    super.updated(changedProperties);
+    if(changedProperties.has("dddaccent")){
+      this.colorChange();
+      console.log(this.dddaccent);
+    }
+  }
+
+  colorChange() {
+    //change number of accent color to inside of var(--ddd-theme-${this.dddaccent})
+    
+    
+  }
+
+
   constructor() {
     super();
     this.title = "";
+    this.dddaccent = "";
+    this.dddprimary = "";
     this.registerLocalization({
       context: this,
       localesPath:
@@ -36,6 +53,8 @@ export class DddCardList extends DDDSuper(I18NMixin(LitElement)) {
     return {
       ...super.properties,
       title: { type: String, reflect: true },
+      dddaccent: { type: String, reflect: true, attribute: "ddd-accent" },
+      dddprimary: { type: String, reflect: true, attribute: "ddd-primary" },
     };
   }
 
@@ -45,15 +64,17 @@ export class DddCardList extends DDDSuper(I18NMixin(LitElement)) {
     css`
       :host {
         //display: inline-block;
-        display: flex;
+        display: inline-flex;
         color: var(--ddd-theme-primary);
         background-color: var(--ddd-theme-accent);
         font-family: var(--ddd-font-navigation);
       }
       .wrapper {
-        display: flex;
-        margin: var(--ddd-spacing-2);
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        margin: var(--ddd-spacing-2); 
         padding: var(--ddd-spacing-4);
+        
       }
       h3 span {
         font-size: var(--ddd-card-list-label-font-size, var(--ddd-font-size-s));
@@ -67,8 +88,9 @@ export class DddCardList extends DDDSuper(I18NMixin(LitElement)) {
   // Lit render the HTML
   render() {
     return html`
-<div class="wrapper">
-  <slot></slot>
+<div class="wrapper" style="background-color: var(--ddd-primary-${this.dddaccent});" >
+  <slot>
+  </slot>
 </div>`;
   }
 

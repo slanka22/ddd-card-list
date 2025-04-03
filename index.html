@@ -33,23 +33,23 @@
 </head>
 
 <body>
-  <div id="demo">
+
     <h1>ddd-card-list</h1>
     <!-- this is going to do whatever the tag's defaults are -->
     <h2>Default</h2>
-    <ddd-card data-primary="20" data-accent="12">Hello</ddd-card>
+    <ddd-card image="https://images.ctfassets.net/ni9rh5nu0d99/C6YPZMqHyRaPeRrVTun8k/1ca61866afa1b3d903944a38ea34cecc/beaver-01.jpg" data-primary="20" data-accent="30  ">Hello</ddd-card>
     <h2>data primary</h2>
-    <ddd-card-list>
-      <ddd-card image="https://images.ctfassets.net/ni9rh5nu0d99/1paFaX2Dc7iHh9Z6K7mIim/1427b9970ff21dd9c8a770067638efc1/abington-02.jpg" campus="bruh"></ddd-card>
+    <ddd-card-list data-accent="8">
+      <ddd-card image="https://images.ctfassets.net/ni9rh5nu0d99/1paFaX2Dc7iHh9Z6K7mIim/1427b9970ff21dd9c8a770067638efc1/abington-02.jpg" campus="Abington" description="Close to Philadelphia, Penn State Abington’s suburban campus offers bachelor's degrees, athletics, and a diverse student community."></ddd-card>
+      <ddd-card image="https://images.ctfassets.net/ni9rh5nu0d99/6oBUNrVTNPJaoE9ahnVX2E/2c655bdcf28befdf81d5a24248a9dca5/altoona-01.jpg" campus="Altoona"></ddd-card>
+      <ddd-card image="https://images.ctfassets.net/ni9rh5nu0d99/C6YPZMqHyRaPeRrVTun8k/1ca61866afa1b3d903944a38ea34cecc/beaver-01.jpg" campus="Beaver"></ddd-card>
       <ddd-card></ddd-card>
-      <ddd-card></ddd-card>
-      <ddd-card></ddd-card>
+      <ddd-card image="https://images.ctfassets.net/ni9rh5nu0d99/C6YPZMqHyRaPeRrVTun8k/1ca61866afa1b3d903944a38ea34cecc/beaver-01.jpg"></ddd-card>
     </ddd-card-list>
     <h2>Slot usage</h2>
     <ddd-card-list data-accent="3" data-primary="20"><div>Sample slot content</div></ddd-card-list>
     <h2>Property usage</h2>
     <ddd-card-list id="example" title="Sample property title"></ddd-card-list>
-  </div>
   <script type="module" src="./ddd-card-list.js"></script>
   <script type="module" src="./ddd-card.js"></script>
 
