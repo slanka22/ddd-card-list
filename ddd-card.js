@@ -204,11 +204,12 @@ export class DddCard extends DDDPulseEffectSuper(I18NMixin((DDD))) {
   <div class="container">
     <h1>${this.campus}</h1>
     <p>${this.description}</p>
-    <button>Explore ></button>
+    <button class="ddd-primary-0 large">Explore ></button>
     <span class="ddd Primary-0 large"></span>
   </div>
 </div>`;
-  }
+}
+
 
   /**
    * haxProperties integration via file reference
