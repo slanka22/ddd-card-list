@@ -195,7 +195,7 @@ export class DddCard extends DDDPulseEffectSuper(I18NMixin((DDD))) {
   }
     //https://images.ctfassets.net/ni9rh5nu0d99/1paFaX2Dc7iHh9Z6K7mIim/1427b9970ff21dd9c8a770067638efc1/abington-02.jpg
   // Lit render the HTML
-  render() {
+render() {
     return html`    
 <div class="card">
   <div class="accent" style="background-color: var(--ddd-primary-${this.dddprimary});">
@@ -204,11 +204,11 @@ export class DddCard extends DDDPulseEffectSuper(I18NMixin((DDD))) {
   <div class="container">
     <h1>${this.campus}</h1>
     <p>${this.description}</p>
-    <button class="ddd-primary-0 large">Explore ></button>
-    <span class="ddd Primary-0 large"></span>
+    <button large data-primary="0" class="ddd-primary-0">Explore ></button>
   </div>
 </div>`;
 }
+
 
 
   /**
